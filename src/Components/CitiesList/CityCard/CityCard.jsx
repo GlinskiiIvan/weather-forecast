@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styles from './CityCard.module.scss'
 import {CitiesContext} from "../../../CitiesContext/CitiesContext";
 import {useEffect, useState, useContext} from "react";;
@@ -6,6 +6,8 @@ import {useEffect, useState, useContext} from "react";;
 const CityCard = (props) => {
     const [cities, dispatchCities] = useContext(CitiesContext);
     const [data, setData] = useState('');
+    const [isEdit, setIsEdit] = useState(false);
+    const newCityRef = useRef();
     const API_KEY = 'fc912576cdd213b8b286adfc2dc7ad1a';
 
     useEffect( () => {
@@ -18,10 +20,28 @@ const CityCard = (props) => {
                     .then(json => setData(json))
             })
     }, [])
-
-    /*const {name, weather, main} = data;
+    if (!data) return ;
+    const {name, weather, main} = data;
     const {icon, description} = weather[0];
-    const {temp} = main;*/
+    const {temp} = main;
+
+    const changeCityHandler = (event) => {
+        event.preventDefault();
+        setIsEdit(true);
+    }
+    const changeCityDoneHandler = (event) => {
+        event.preventDefault();
+        dispatchCities({
+            type: 'CHANGE_CITY',
+            oldCity: props.city,
+            newCity: newCityRef.current.value
+        })
+        setIsEdit(false);
+    }
+    const changeCityCancelHandler = (event) => {
+        event.preventDefault();
+        setIsEdit(false);
+    }
 
     const removeCityHandle = (event) => {
         event.preventDefault();
@@ -35,16 +55,22 @@ const CityCard = (props) => {
     return (
         <div className={styles.city}>
             <div className={styles.actions}>
-                <button>edit</button>
+                <button onClick={changeCityHandler}>edit</button>
                 <button onClick={removeCityHandle}>X</button>
             </div>
-            {props.city}
-            {/*<div>
+            <div>
                 <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="" className={styles.icon}/>
-                <h2 className={styles.cityName}>{name}</h2>
+                {isEdit && <div>
+                    <input className={styles.inputChange} type="text" ref={newCityRef}/>
+                    <div className={styles.changeActions}>
+                        <button className={styles.btnDone} onClick={changeCityDoneHandler}>✔</button>
+                        <button className={styles.btnDone} onClick={changeCityCancelHandler}>X</button>
+                    </div>
+                </div>}
+                {!isEdit && <h2 className={styles.cityName}>{name}</h2>}
                 <p className={styles.description}>{description}</p>
                 <span className={styles.temp}>{Math.round(temp)} &#8451;</span>
-            </div>*/}
+            </div>
         </div>
     );
 };

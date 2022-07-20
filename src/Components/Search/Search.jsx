@@ -12,6 +12,7 @@ const Search = (props) => {
             type: 'ADD_CITY',
             city: searchRef.current.value
         })
+        searchRef.current.value = '';
     }
 
     return (

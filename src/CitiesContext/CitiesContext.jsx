@@ -15,7 +15,10 @@ const reducerCities = (state, action) => {
             return {...state, cities: updatedCities};
         }
         case 'CHANGE_CITY': {
-
+            const updatedCities = state.cities;
+            const indexRemovedCity = updatedCities.indexOf(action.oldCity)
+            updatedCities[indexRemovedCity] = action.newCity;
+            return {...state, cities: updatedCities};
         }
         case 'REMOVE_CITY': {
             const updatedCities = state.cities.filter((city) => city !== action.city)
