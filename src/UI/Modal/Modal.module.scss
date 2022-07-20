@@ -1,0 +1,21 @@
+@import "../../vars";
+
+.wrapper {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: fit-content;
+  border-radius: 10px;
+  background-color: $card_background_main;
+  padding: 20px;
+}
