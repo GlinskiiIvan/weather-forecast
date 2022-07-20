@@ -18,7 +18,8 @@ const reducerCities = (state, action) => {
 
         }
         case 'REMOVE_CITY': {
-
+            const updatedCities = state.cities.filter((city) => city !== action.city)
+            return {...state, cities: updatedCities};
         }
     }
 }
