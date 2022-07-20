@@ -1,17 +1,19 @@
-import React, {useContext} from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
+
 import styles from './App.module.scss';
-import PromoText from "../PromoText/PromoText";
-import Search from "../Search/Search";
-import CitiesList from "../CitiesList/CitiesList";
+import MainPage from "../MainPage/MainPage";
+import CityPage from "../CityPage/CityPage";
 
 function App() {
   return (
     <div className={styles.container}>
-        <PromoText />
-        <Search />
-        <CitiesList />
-
-        {/*<CityPage />*/}
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/city/:city" element={<CityPage />} />
+            </Routes>
+        </BrowserRouter>
 
     </div>
   );

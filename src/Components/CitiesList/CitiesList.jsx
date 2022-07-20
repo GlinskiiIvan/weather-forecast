@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import styles from './CitiesList.module.scss'
 import CityCard from "./CityCard/CityCard";
 import {CitiesContext} from "../../CitiesContext/CitiesContext";
+import {Link} from "react-router-dom";
 
 {/*
                         temp - температура

@@ -20,6 +20,7 @@ time, mark, audio, video, * {
 	font: inherit;
 	vertical-align: baseline;
 	box-sizing: border-box;
+	text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -54,6 +55,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: $body_background;
   color: $font_color_primary;
+}
+
+a {
+	text-decoration: none;
+	color: $font_color_primary;
 }
 
 section {
