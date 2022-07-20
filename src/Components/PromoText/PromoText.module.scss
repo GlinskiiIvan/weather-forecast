@@ -1,0 +1,17 @@
+@import "../../vars";
+
+.wrapper {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.title{
+  font-size: $font_size_title;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: $font_color_secondary;
+  font-size: $font_size_text_base;
+}

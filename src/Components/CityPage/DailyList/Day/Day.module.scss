@@ -1,0 +1,18 @@
+@import "../../../../vars";
+
+.day {
+  text-align: center;
+  font-size: $font_size_text_base;
+  padding: 20px 20px 5px 20px;
+  margin: 10px 5px;
+  background-color: $card_background_main;
+  min-width: 13%;
+  width: fit-content;
+  border-radius: 10px;
+  h4 {
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 15px;
+  }
+}

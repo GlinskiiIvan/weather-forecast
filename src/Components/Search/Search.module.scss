@@ -1,0 +1,49 @@
+@import "../../vars.scss";
+
+
+.search {
+
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.inputSearch {
+  background-color: rgb(35, 34, 74);
+  margin-right: 15px;
+  border-radius: 10px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  label {
+    margin-right: 15px;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $font_color_secondary;
+    font-size: $font_size_text_base;
+  }
+}
+
+.btnAddCity {
+  background-color: rgb(35, 34, 74);
+  color: $font_color_primary;
+  border: none;
+  outline: none;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}

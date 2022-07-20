@@ -1,0 +1,56 @@
+@import "../../../vars";
+
+.city {
+  background-color: $card_background_main;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 20%;
+  width: fit-content;
+  margin: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid $body_background;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px $card_background_active;
+    color: $font_color_primary;
+    font-size: $font_size_text_base;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.icon {
+
+}
+
+.cityName {
+  font-size: $font_size_title;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: $font_size_text_base;
+  color: $font_color_secondary;
+  margin-bottom: 10px;
+}
+
+.temp {
+  font-size: $font_size_title;
+  font-weight: bold;
+}

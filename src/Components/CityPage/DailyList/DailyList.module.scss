@@ -1,0 +1,15 @@
+@import "../../../vars";
+
+.dailyListWrapper {
+  h2 {
+    font-size: $font_size_title;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+
+.dailyList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
