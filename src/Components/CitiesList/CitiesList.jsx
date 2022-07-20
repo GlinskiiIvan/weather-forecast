@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styles from './CitiesList.module.scss'
 import CityCard from "./CityCard/CityCard";
+import {CitiesContext} from "../../CitiesContext/CitiesContext";
 
 {/*
                         temp - температура
@@ -9,32 +10,14 @@ import CityCard from "./CityCard/CityCard";
 */}
 
 const CitiesList = (props) => {
-    // const [data, setData] = useState('');
-    // const city = 'Ust-Kamenogorsk';
-    // const API_KEY = 'fc912576cdd213b8b286adfc2dc7ad1a';
-    // useEffect(() => {
-    //     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
-    //         .then(res => res.json())
-    //         .then(json => setData(json))
-    //     const lat = data.coord.lat;
-    //     const lon = data.coord.lon;
-    //     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${API_KEY}`)
-    //         .then(res => res.json())
-    //         .then(json => setData(json))
-    //
-    // }, [])
-    // console.log('data-2', data)
+    const [cities, dispatchCities] = useContext(CitiesContext);
 
     return (
         <section>
             <div className={styles.citiesList}>
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
-                <CityCard />
+                {cities.cities.map((city) => {
+                    return <CityCard key={city} city={city} />
+                })}
             </div>
         </section>
     );
