@@ -6,6 +6,7 @@ import {useNavigate, useLocation} from "react-router-dom";
 
 import CurrentInfo from "./CurrentInfo/CurrentInfo";
 import DailyList from "./DailyList/DailyList";
+import Button from "../../UI/Button/Button";
 
 const CityPage = (props) => {
     const location = useLocation();
