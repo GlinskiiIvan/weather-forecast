@@ -6,7 +6,7 @@ import MainPage from "../MainPage/MainPage";
 import CityPage from "../CityPage/CityPage";
 
 function App() {
-  return (
+    return (
     <div className={styles.container}>
         <BrowserRouter>
             <Routes>

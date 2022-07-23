@@ -38,6 +38,7 @@ const CityCard = (props) => {
     }
     const changeCityDoneHandler = (event) => {
         event.preventDefault();
+        setNewCity('');
         dispatchCities({
             type: 'CHANGE_CITY',
             oldCity: props.city,
