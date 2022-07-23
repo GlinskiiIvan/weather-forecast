@@ -1,9 +1,8 @@
-import React, {useContext, useRef, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './Search.module.scss'
 import {CitiesContext} from "../../CitiesContext/CitiesContext";
 
 const Search = (props) => {
-    const searchRef = useRef();
     const [city, setCity] = useState('');
     const [cities, dispatchCities] = useContext(CitiesContext);
 
@@ -21,7 +20,7 @@ const Search = (props) => {
             <div className={styles.wrapper}>
                 <div className={styles.inputSearch}>
                     <label><img src="/img/icons/search.svg" alt=""/></label>
-                    <input value={city} onChange={(e) => setCity(e.target.value)} ref={searchRef} type="text" placeholder='Поиск...'/>
+                    <input value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder='Поиск...'/>
                 </div>
                 <button disabled={!city} className={styles.btnAddCity} onClick={searchHandle}>+</button>
             </div>

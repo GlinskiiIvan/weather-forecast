@@ -1,16 +1,16 @@
 import React, {useRef} from 'react';
-import styles from './CityCard.module.scss'
-import {CitiesContext} from "../../../CitiesContext/CitiesContext";
 import {useEffect, useState, useContext} from "react";
 import {Link} from "react-router-dom";
 import Modal from "../../../UI/Modal/Modal";
+import {CitiesContext} from "../../../CitiesContext/CitiesContext";
+
+import styles from './CityCard.module.scss'
 
 const CityCard = (props) => {
 
     const [cities, dispatchCities] = useContext(CitiesContext);
-
+    const [newCity, setNewCity] = useState('');
     const [isEdit, setIsEdit] = useState(false);
-    const newCityRef = useRef();
     const API_KEY = 'fc912576cdd213b8b286adfc2dc7ad1a';
     const [data, setData] = useState('');
 
@@ -41,7 +41,7 @@ const CityCard = (props) => {
         dispatchCities({
             type: 'CHANGE_CITY',
             oldCity: props.city,
-            newCity: newCityRef.current.value
+            newCity: newCity
         })
         setIsEdit(false);
     }
@@ -62,10 +62,11 @@ const CityCard = (props) => {
         <React.Fragment>
             {isEdit && (
                 <Modal>
-                    <div>
-                        <input className={styles.inputChange} type="text" ref={newCityRef}/>
+                    <div className={styles.changeWrapper}>
+                        <h4>Введите название города на который хотите заменить текущий.</h4>
+                        <input className={styles.inputChange} type="text" value={newCity} onChange={(e) => setNewCity(e.target.value)}/>
                         <div className={styles.changeActions}>
-                            <button className={styles.btnDone} onClick={changeCityDoneHandler}>✔</button>
+                            <button className={styles.btnDone} onClick={changeCityDoneHandler} disabled={!newCity}>✔</button>
                             <button className={styles.btnDone} onClick={changeCityCancelHandler}>X</button>
                         </div>
                     </div>

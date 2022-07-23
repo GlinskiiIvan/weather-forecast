@@ -76,6 +76,16 @@
 
 }
 
+.changeWrapper {
+  text-align: center;
+  max-width: 500px;
+  h4 {
+    font-size: $font_size_title;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+
 .changeActions {
   button {
     background-color: rgb(35, 34, 74);
@@ -95,6 +105,12 @@
     }
     &:active {
       transform: scale(0.95);
+    }
+    &:disabled {
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
+      pointer-events: none;
     }
   }
 }
