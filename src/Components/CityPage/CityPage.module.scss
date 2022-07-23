@@ -2,22 +2,4 @@
 
 .btnGoBack {
   margin-top: 20px;
-
-  background-color: rgb(35, 34, 74);
-  color: $font_color_primary;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px $card_background_active;
-  transition: all 0.3s ease;
-  &:hover {
-    transform: scale(1.05);
-  }
-  &:active {
-    transform: scale(0.95);
-  }
 }

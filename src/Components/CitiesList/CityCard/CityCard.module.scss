@@ -23,23 +23,7 @@
   display: flex;
   justify-content: flex-end;
   button {
-    width: fit-content;
-    padding: 5px 10px;
-    background-color: transparent;
-    outline: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px $card_background_active;
-    color: $font_color_primary;
-    font-size: $font_size_text_base;
     margin-left: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    &:hover {
-      transform: scale(1.05);
-    }
-    &:active {
-      transform: scale(0.95);
-    }
   }
 }
 
@@ -87,30 +71,5 @@
 }
 
 .changeActions {
-  button {
-    background-color: rgb(35, 34, 74);
-    color: $font_color_primary;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 5px 10px;
-    margin: 5px 5px 15px 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px $card_background_active;
-    transition: all 0.3s ease;
-    &:hover {
-      transform: scale(1.05);
-    }
-    &:active {
-      transform: scale(0.95);
-    }
-    &:disabled {
-      border: 1px solid #999999;
-      background-color: #cccccc;
-      color: #666666;
-      pointer-events: none;
-    }
-  }
+
 }

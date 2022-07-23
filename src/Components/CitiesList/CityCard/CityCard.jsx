@@ -5,6 +5,7 @@ import Modal from "../../../UI/Modal/Modal";
 import {CitiesContext} from "../../../CitiesContext/CitiesContext";
 
 import styles from './CityCard.module.scss'
+import Button from "../../../UI/Button/Button";
 
 const CityCard = (props) => {
 
@@ -67,8 +68,11 @@ const CityCard = (props) => {
                         <h4>Введите название города на который хотите заменить текущий.</h4>
                         <input className={styles.inputChange} type="text" value={newCity} onChange={(e) => setNewCity(e.target.value)}/>
                         <div className={styles.changeActions}>
-                            <button className={styles.btnDone} onClick={changeCityDoneHandler} disabled={!newCity}>✔</button>
-                            <button className={styles.btnDone} onClick={changeCityCancelHandler}>X</button>
+                            {/*<button className={styles.btnDone} onClick={changeCityDoneHandler} disabled={!newCity}>✔</button>
+                            <button className={styles.btnDone} onClick={changeCityCancelHandler}>X</button>*/}
+
+                            <Button className={styles.btnDone} onClick={changeCityDoneHandler} disabled={!newCity}>✔</Button>
+                            <Button className={styles.btnDone} onClick={changeCityCancelHandler}>X</Button>
                         </div>
                     </div>
                 </Modal>
@@ -76,8 +80,8 @@ const CityCard = (props) => {
             <Link to={`/city/${props.city}`} state={{data: data, city: props.city}} className={styles.wrapper}>
                 <div className={styles.city}>
                     <div className={styles.actions}>
-                        <button onClick={changeCityHandler}>edit</button>
-                        <button onClick={removeCityHandle}>X</button>
+                        <Button onClick={changeCityHandler}>edit</Button>
+                        <Button onClick={removeCityHandle}>X</Button>
                     </div>
                     <div>
                         <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="" className={styles.icon}/>

@@ -1,5 +1,7 @@
 import React, {useContext, useState} from 'react';
 import Modal from "../../UI/Modal/Modal";
+import Button from "../../UI/Button/Button";
+
 import {CitiesContext} from "../../CitiesContext/CitiesContext";
 
 import styles from './Search.module.scss'
@@ -40,7 +42,7 @@ const Search = (props) => {
                         <label><img src="/img/icons/search.svg" alt=""/></label>
                         <input value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder='Поиск...'/>
                     </div>
-                    <button disabled={!city} className={styles.btnAddCity} onClick={searchHandle}>+</button>
+                    <Button disabled={!city} onClick={searchHandle}>+</Button>
                 </div>
             </section>
         </React.Fragment>

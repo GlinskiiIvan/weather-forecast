@@ -15,7 +15,7 @@ const CityPage = (props) => {
     console.log(location.state.data)
     return (
         <React.Fragment>
-            <button className={styles.btnGoBack} onClick={() => navigate('/')}>Назад ⬅</button>
+            <Button className={styles.btnGoBack} onClick={() => navigate('/')}>Назад ⬅</Button>
             <CurrentInfo data={location.state.data.current} city={location.state.city} />
             <DailyList data={location.state.data.daily} />
         </React.Fragment>
