@@ -6,8 +6,9 @@ export const CitiesContext = React.createContext({
 
 
 const initialStateCities = {
-    cities: ['Ust-Kamenogorsk', 'Moscow'],
+    cities: ['Усть-Каменогорск', 'Москва'],
 };
+// const initialStateCities = JSON.parse(localStorage.getItem('state' || {}));
 const reducerCities = (state, action) => {
     switch (action.type) {
         case 'ADD_CITY': {

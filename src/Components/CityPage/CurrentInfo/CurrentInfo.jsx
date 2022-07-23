@@ -14,10 +14,10 @@ const CurrentInfo = (props) => {
 
     return (
         <div className={styles.cityWrapper}>
-            <div className={styles.actions}>
+            {/*<div className={styles.actions}>
                 <button>edit</button>
                 <button>X</button>
-            </div>
+            </div>*/}
             <div className={styles.cityContent}>
                 <div className={styles.main}>
                     <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="" className={styles.icon}/>
@@ -28,7 +28,7 @@ const CurrentInfo = (props) => {
                 <div className={styles.description}>
                     <p><span>Ощущается как: </span>{Math.round(feels_like)} &#8451;</p>
                     <p><span>Облачность: </span>{description}</p>
-                    <p><span>Атмосферное давление: </span>{pressure} kPa</p>
+                    <p><span>Атмосферное давление: </span>{pressure} мм рт. ст.</p>
                     <p><span>Влажность: </span>{humidity} %</p>
                 </div>
             </div>

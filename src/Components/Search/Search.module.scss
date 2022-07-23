@@ -46,4 +46,18 @@
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 0 2px 5px $card_background_active;
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+  &:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    pointer-events: none;
+  }
 }
