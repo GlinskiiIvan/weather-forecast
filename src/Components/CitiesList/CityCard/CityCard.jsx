@@ -28,7 +28,6 @@ const CityCard = (props) => {
     }, [])
 
     if (!data) return ;
-    console.log('data', data)
 
     const {weather, temp} = data.current;
     const {icon, description} = weather[0];
@@ -68,9 +67,6 @@ const CityCard = (props) => {
                         <h4>Введите название города на который хотите заменить текущий.</h4>
                         <input className={styles.inputChange} type="text" value={newCity} onChange={(e) => setNewCity(e.target.value)}/>
                         <div className={styles.changeActions}>
-                            {/*<button className={styles.btnDone} onClick={changeCityDoneHandler} disabled={!newCity}>✔</button>
-                            <button className={styles.btnDone} onClick={changeCityCancelHandler}>X</button>*/}
-
                             <Button className={styles.btnDone} onClick={changeCityDoneHandler} disabled={!newCity}>✔</Button>
                             <Button className={styles.btnDone} onClick={changeCityCancelHandler}>X</Button>
                         </div>
