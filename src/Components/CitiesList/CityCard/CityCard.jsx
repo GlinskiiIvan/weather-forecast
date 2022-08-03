@@ -2,10 +2,11 @@ import React, {useRef} from 'react';
 import {useEffect, useState, useContext} from "react";
 import {Link} from "react-router-dom";
 import Modal from "../../../UI/Modal/Modal";
+import Button from "../../../UI/Button/Button";
+
 import {CitiesContext} from "../../../CitiesContext/CitiesContext";
 
 import styles from './CityCard.module.scss'
-import Button from "../../../UI/Button/Button";
 
 const CityCard = (props) => {
 

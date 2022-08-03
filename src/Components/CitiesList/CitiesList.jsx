@@ -1,8 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
-import styles from './CitiesList.module.scss'
+
 import CityCard from "./CityCard/CityCard";
+
+import styles from './CitiesList.module.scss'
+
 import {CitiesContext} from "../../CitiesContext/CitiesContext";
-import {Link} from "react-router-dom";
 
 const CitiesList = (props) => {
     const [cities, dispatchCities] = useContext(CitiesContext);

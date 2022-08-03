@@ -1,9 +1,6 @@
 @import "../../../vars";
 
 .wrapper {
-  min-width: 20%;
-  width: fit-content;
-  margin: 10px;
 }
 
 .city {
@@ -12,6 +9,7 @@
   padding: 20px;
   border-radius: 10px;
   width: 100%;
+  height: 100%;
   transition: all 0.3s ease;
   &:hover {
     box-shadow: 0 2px 5px $card_background_active;
