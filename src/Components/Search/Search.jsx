@@ -15,7 +15,7 @@ const Search = (props) => {
 
     const searchHandle = (event) => {
         event.preventDefault()
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`)
+        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`)
             .then((res) => res.json())
             .then(json => {
                 if (json.length > 0) {

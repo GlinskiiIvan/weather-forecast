@@ -22,12 +22,14 @@ const reducerCities = (state, action) => {
         case 'CHANGE_CITY': {
             if (!state.cities.includes(action.newCity)) {
                 const updatedCities = state.cities;
-                const indexRemovedCity = updatedCities.indexOf(action.oldCity)
+                const indexRemovedCity = updatedCities.indexOf(action.oldCity);
                 updatedCities[indexRemovedCity] = action.newCity;
                 const newState = {...state, cities: updatedCities, isIncludes: false};
                 localStorage.setItem('data', JSON.stringify(newState));
+                console.log('changed')
                 return newState;
             } else {
+                console.log('fail change')
                 return {...state, isIncludes: true};
             }
         }

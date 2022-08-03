@@ -16,7 +16,7 @@ const CityCard = (props) => {
     const [data, setData] = useState('');
 
     useEffect( () => {
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${props.city}&limit=1&appid=${API_KEY}`)
+        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${props.city}&limit=1&appid=${API_KEY}`)
             .then(res => res.json())
             .then(json => {
                 const { lat, lon } = json[0];
@@ -38,12 +38,12 @@ const CityCard = (props) => {
     }
     const changeCityDoneHandler = (event) => {
         event.preventDefault();
-        setNewCity('');
         dispatchCities({
             type: 'CHANGE_CITY',
             oldCity: props.city,
             newCity: newCity
         })
+        setNewCity('');
         setIsEdit(false);
     }
     const changeCityCancelHandler = (event) => {
@@ -72,7 +72,8 @@ const CityCard = (props) => {
                         </div>
                     </div>
                 </Modal>
-            )}
+            )
+            }
             <Link to={`/city/${props.city}`} state={{data: data, city: props.city}} className={styles.wrapper}>
                 <div className={styles.city}>
                     <div className={styles.actions}>
