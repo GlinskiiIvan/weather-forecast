@@ -1,30 +1,22 @@
-import React, {useContext, useReducer} from "react";
+import React, {useReducer} from "react";
 
 export const CitiesContext = React.createContext({
     cities: [],
+    isIncludes: false
 });
 
-
-/*const initialStateCities = {
-    cities: ['Усть-Каменогорск', 'Москва'],
-    cityIncludes: false,
-};*/
-// const initialStateCities = JSON.parse(localStorage.getItem('data' || {}));
-/*localStorage.setItem('data', JSON.stringify({cities: ['Усть-Каменогорск', 'Москва'],
-    cityIncludes: false}));*/
-
-const initialStateCities = JSON.parse(localStorage.getItem('data')) || {cities: [], cityIncludes: false};
+const initialStateCities = JSON.parse(localStorage.getItem('data')) || {cities: [], isIncludes: false};
 
 const reducerCities = (state, action) => {
     switch (action.type) {
         case 'ADD_CITY': {
             if(!state.cities.includes(action.city)) {
                 const updatedCities = [...state.cities, action.city];
-                const newState = {...state, cities: updatedCities, cityIncludes: false};
+                const newState = {...state, cities: updatedCities, isIncludes: false};
                 localStorage.setItem('data', JSON.stringify(newState));
                 return newState;
             } else {
-                return {...state, cityIncludes: true};
+                return {...state, isIncludes: true};
             }
         }
         case 'CHANGE_CITY': {
@@ -32,11 +24,11 @@ const reducerCities = (state, action) => {
                 const updatedCities = state.cities;
                 const indexRemovedCity = updatedCities.indexOf(action.oldCity)
                 updatedCities[indexRemovedCity] = action.newCity;
-                const newState = {...state, cities: updatedCities, cityIncludes: false};
+                const newState = {...state, cities: updatedCities, isIncludes: false};
                 localStorage.setItem('data', JSON.stringify(newState));
                 return newState;
             } else {
-                return {...state, cityIncludes: true};
+                return {...state, isIncludes: true};
             }
         }
         case 'REMOVE_CITY': {
@@ -46,7 +38,7 @@ const reducerCities = (state, action) => {
             return newState;
         }
         case 'CLOSE_WARNING_INCLUDES': {
-            return {...state, cityIncludes: false};
+            return {...state, isIncludes: false};
         }
     }
 }
